@@ -36,7 +36,7 @@ Route::middleware(['auth', 'CustomerRole'])->group(function(){
 Route::middleware(['auth', 'MitraRole'])->group(function(){
 	Route::prefix('mitra')->group(function(){
 		Route::name('mitra.')->group(function(){
-			Route::get('/beranda', 'MitraController@index')->name('beranda');
+			Route::get('/beranda', 'MitraController@index')->name('index');
 		});
 	});
 });
