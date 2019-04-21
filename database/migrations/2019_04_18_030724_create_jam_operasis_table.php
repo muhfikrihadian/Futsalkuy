@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReservationsTable extends Migration
+class CreateJamOperasisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateReservationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reservations', function (Blueprint $table) {
+        Schema::create('jam_operasis', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_lapangan');
-            $table->string('nama_mitra');
-            $table->string('nama_customer');
-            $table->time('waktu');
-            $table->enum('status', ['Proses','Terbooking','Selesai']);
+            $table->string('jam');
+            $table->enum('status', ['Tersedia','Tidak Tersedia']);
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateReservationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reservations');
+        Schema::dropIfExists('jam_operasis');
     }
 }

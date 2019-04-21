@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Mitra Futsalkuy</title>
+    <title>Mitra SportQ</title>
     <link href="{{ asset('css/font-face.css')}}" rel="stylesheet" media="all">
     <link href="{{ asset('vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
     <link href="{{ asset('vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all">
@@ -85,15 +85,15 @@
                                 <i class="fas fa-home"></i>Dashboard</a>
                         </li>
                         <li>
-                            <a href="table.html">
+                            <a href="{{ route('mitra.pemesanan') }}">
                                 <i class="fas fa-file-alt"></i>Pemesanan</a>
                         </li>
                         <li>
-                            <a href="form.html">
+                            <a href="{{ route('mitra.lapangan') }}">
                                 <i class="fas fa-map-marker-alt"></i>Lapangan</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{ route('mitra.laporan') }}">
                                 <i class="fas fa-file-alt"></i>Laporan</a>
                         </li>
                     </ul>
@@ -230,7 +230,7 @@
                                             <img src="{{ asset('images/icon/avatar-01.jpg')}}" alt="John Doe" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">john doe</a>
+                                            <a class="js-acc-btn" href="#">{{ Auth::user()->name }}</a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
@@ -241,15 +241,15 @@
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">john doe</a>
+                                                        <a href="#">{{ Auth::user()->name }}</a>
                                                     </h5>
-                                                    <span class="email">johndoe@example.com</span>
+                                                    <span class="email">{{ Auth::user()->email }}</span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
+                                                    <a href="{{ route('mitra.profile') }}">
+                                                        <i class="zmdi zmdi-account"></i>Profile</a>
                                                 </div>
                                                 <div class="account-dropdown__item">
                                                     <a href="#">

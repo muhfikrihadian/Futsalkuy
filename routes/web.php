@@ -37,6 +37,11 @@ Route::middleware(['auth', 'MitraRole'])->group(function(){
 	Route::prefix('mitra')->group(function(){
 		Route::name('mitra.')->group(function(){
 			Route::get('/beranda', 'MitraController@index')->name('index');
+			Route::get('/pemesanan', 'MitraController@pemesanan')->name('pemesanan');
+			Route::get('/lapangan', 'MitraController@lapangan')->name('lapangan');
+			Route::get('/laporan', 'MitraController@laporan')->name('laporan');
+			Route::get('/profile', 'MitraController@profile')->name('profile');
+			Route::get('/settings', 'MitraController@settings')->name('settings');
 		});
 	});
 });

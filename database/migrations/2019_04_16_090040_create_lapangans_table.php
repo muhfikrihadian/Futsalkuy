@@ -18,8 +18,8 @@ class CreateLapangansTable extends Migration
             $table->integer('id_mitra');
             $table->string('nama');
             $table->string('foto');
-            $table->string('tarif');
-            $table->string('tersedia');
+            $table->integer('tarif')->unsigned();
+            $table->integer('rating');
             $table->timestamps();
         });
     }
