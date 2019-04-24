@@ -29,6 +29,10 @@ Route::middleware(['auth', 'AdminRole'])->group(function(){
 Route::middleware(['auth', 'CustomerRole'])->group(function(){
 	Route::prefix('customer')->group(function(){
 		Route::name('customer.')->group(function(){
+			Route::get('/beranda', 'CustomerController@index')->name('index');
+			Route::prefix('futsal')->group(function(){
+				Route::get('/beranda', 'CustomerController@indexFutsal')->name('indexFutsal');
+				});	
 		});	
 	});
 });
@@ -39,8 +43,11 @@ Route::middleware(['auth', 'MitraRole'])->group(function(){
 			Route::get('/beranda', 'MitraController@index')->name('index');
 			Route::get('/pemesanan', 'MitraController@pemesanan')->name('pemesanan');
 			Route::get('/lapangan', 'MitraController@lapangan')->name('lapangan');
+			Route::get('/tambahlapangan', 'MitraController@tambahLapangan')->name('tambahLapangan');
+			Route::post('/tambahlapangan', 'MitraController@tambahLapanganProses')->name('tambahLapanganProses');
 			Route::get('/laporan', 'MitraController@laporan')->name('laporan');
 			Route::get('/profile', 'MitraController@profile')->name('profile');
+			Route::post('/isiprofile', 'MitraController@isiProfile')->name('isiprofile');
 			Route::get('/settings', 'MitraController@settings')->name('settings');
 		});
 	});

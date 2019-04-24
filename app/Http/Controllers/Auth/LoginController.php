@@ -31,7 +31,7 @@ class LoginController extends Controller
           return 'mitra/beranda';
         }
         elseif (Auth::user()->role == 'Customer') {
-          return 'mitra/beranda';
+          return 'customer/beranda';
         }
         elseif (Auth::user()->role == 'Mitra') {
           return 'mitra/beranda';

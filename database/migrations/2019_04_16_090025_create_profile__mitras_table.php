@@ -21,9 +21,9 @@ class CreateProfileMitrasTable extends Migration
             $table->string('foto');
             $table->string('kota');
             $table->string('alamat');
-            $table->string('tipe_mitra');
             $table->string('na_rek');
             $table->string('no_rek');
+            $table->string('tipe_mitra');
             $table->timestamps();
         });
     }

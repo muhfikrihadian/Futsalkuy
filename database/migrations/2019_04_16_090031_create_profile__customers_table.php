@@ -19,11 +19,9 @@ class CreateProfileCustomersTable extends Migration
             $table->string('nama');
             $table->string('nomor_telephone');
             $table->string('foto');
-            $table->string('kota');
             $table->string('alamat');
             $table->string('no_rek');
             $table->string('na_rek');
-            $table->string('tipe_mitra');
             $table->timestamps();
         });
     }
