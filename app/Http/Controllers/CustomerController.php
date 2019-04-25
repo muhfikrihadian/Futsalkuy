@@ -24,4 +24,11 @@ class CustomerController extends Controller
     	$data['field'] = Lapangan::orderBy('created_at', 'desc')->get();
         return view('Customer.Futsal.beranda', $data);
     }
+    public function lapangan($id){
+    	$data['field'] = Lapangan::where('id', '=', $id)->get();
+    	$lapangan = Lapangan::where('id', '=', $id)->get();
+    	foreach($lapangan as $field)
+    	$data['vendor'] = Profile_Mitra::where('id', '=', $field->id_mitra)->get();
+        return view('Customer.Futsal.lapangan', $data);
+    }
 }

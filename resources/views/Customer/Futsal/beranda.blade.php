@@ -10,11 +10,11 @@
         <div class="card-body">
           <h4 class="card-title">{{ $lapangan->nama }}</h4>
           <p class="card-text">{{ $lapangan->tarif }}</p>
-          <a href="#" class="btn btn-primary">Read More &rarr;</a>
+          <a href="{{ route('customer.lapangan', ['id' => $lapangan->id]) }}" class="btn btn-primary">Read More &rarr;</a>
         </div>
         <div class="card-footer text-muted">
-          {{ $lapangan->created_at }}
-          <a href="#">{{ $lapangan->tarif }}</a>
+          {{ $lapangan->created_at->format('m/d/Y') }}
+          <a href="#">Tarif Rp.{{ $lapangan->tarif }} / Jam</a>
         </div>
       </div>
       @endforeach

@@ -32,6 +32,7 @@ Route::middleware(['auth', 'CustomerRole'])->group(function(){
 			Route::get('/beranda', 'CustomerController@index')->name('index');
 			Route::prefix('futsal')->group(function(){
 				Route::get('/beranda', 'CustomerController@indexFutsal')->name('indexFutsal');
+				Route::get('/lapangan/{id}', 'CustomerController@lapangan')->name('lapangan');
 				});	
 		});	
 	});
