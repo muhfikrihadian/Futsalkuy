@@ -21,7 +21,7 @@ class CustomerController extends Controller
     }
     public function indexFutsal()
     {
-    	$data['field'] = Lapangan::orderBy('created_at', 'desc')->get();
+    	$data['field'] = Lapangan::orderBy('created_at', 'desc')->paginate(2);
         return view('Customer.Futsal.beranda', $data);
     }
     public function lapangan($id){
