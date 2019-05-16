@@ -21,8 +21,10 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Rp.{{ $data->tarif }} /Jam</li>
                         <li class="list-group-item">Rating : 7/10</li>
+                        <li class="list-group-item">Status : Tidak Aktif</li>
                     </ul>
-                    <a href="#" class="btn btn-success">Edit</a>
+                    <h5 class="card-text text-danger mt-3 mb-3">Anda harus mengisi komplit biodata lapangan anda !</h5>
+                    <a href="{{ route('mitra.editLapangan', ['id' => $data->id]) }}" class="btn btn-success">Edit</a>
                     <a href="#" class="btn btn-danger">Delete</a>
                 </div>
             </div>

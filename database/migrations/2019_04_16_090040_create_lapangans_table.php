@@ -19,6 +19,7 @@ class CreateLapangansTable extends Migration
             $table->string('nama');
             $table->string('foto');
             $table->integer('tarif');
+            $table->string('tipe_lapangan');
             $table->timestamps();
         });
     }

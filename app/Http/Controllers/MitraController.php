@@ -21,7 +21,8 @@ class MitraController extends Controller
     }
     public function pemesanan()
     {
-        return view('Mitra.pemesanan');
+        $data['pemesanan'] = Reservation::orderBy('nama_mitra', '=', Auth::user()->name)->orderBy('status', '=', 'Proses')->get();
+        return view('Mitra.pemesanan', $data);
     }
     public function lapangan()
     {
@@ -48,6 +49,21 @@ class MitraController extends Controller
         $save->nama = $r->nama;
         $save->foto = $gambar;
         $save->tarif = $r->tarif;
+        $save->tipe_lapangan = $r->tipe;
+        $save->save();
+        return redirect()->route('mitra.lapangan');
+    }
+    public function editLapangan($id)
+    {
+        $data['id'] = Lapangan::where('id', '=', $id)->get();
+        return view('Mitra.editLapangan', $data);
+    }
+    public function tambahJam(Request $r)
+    {
+        $save = new JamOperasi;
+        $save->id_lapangan = $r->id_lapangan;
+        $save->jam = $r->jam;
+        $save->status = "Tersedia";
         $save->save();
         return redirect()->route('mitra.lapangan');
     }
@@ -75,11 +91,19 @@ class MitraController extends Controller
         $save->no_rek = $r->no_rek;
         $save->tipe_mitra = $r->tipe;
         $save->save();
-        return redirect()->route('mitra.profile');
+        return redirect()->route('mitra.index');
 
     }
     public function settings()
     {
         return view('Mitra.settings');
+    }
+    public function konfirmBooking(Request $r)
+    {
+        $process = Reservation::find($r->id_booking);
+        $process->status = "Terbooking";
+        $process->save();
+
+    return redirect()->route('mitra.pemesanan');
     }
 }

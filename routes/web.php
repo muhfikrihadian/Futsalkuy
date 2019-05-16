@@ -33,6 +33,7 @@ Route::middleware(['auth', 'CustomerRole'])->group(function(){
 			Route::prefix('futsal')->group(function(){
 				Route::get('/beranda', 'CustomerController@indexFutsal')->name('indexFutsal');
 				Route::get('/lapangan/{id}', 'CustomerController@lapangan')->name('lapangan');
+				Route::post('/booking', 'CustomerController@booking')->name('booking');
 				});	
 		});	
 	});
@@ -46,10 +47,14 @@ Route::middleware(['auth', 'MitraRole'])->group(function(){
 			Route::get('/lapangan', 'MitraController@lapangan')->name('lapangan');
 			Route::get('/tambahlapangan', 'MitraController@tambahLapangan')->name('tambahLapangan');
 			Route::post('/tambahlapangan', 'MitraController@tambahLapanganProses')->name('tambahLapanganProses');
+			Route::get('/editlapangan/{id}', 'MitraController@editLapangan')->name('editLapangan');
+			Route::post('/tambahjam', 'MitraController@tambahJam')->name('tambahJam');
+			Route::post('/tambahfoto', 'MitraController@tambahFoto')->name('tambahFoto');
 			Route::get('/laporan', 'MitraController@laporan')->name('laporan');
 			Route::get('/profile', 'MitraController@profile')->name('profile');
 			Route::post('/isiprofile', 'MitraController@isiProfile')->name('isiprofile');
 			Route::get('/settings', 'MitraController@settings')->name('settings');
+			Route::post('/konfirmbooking', 'MitraController@konfirmBooking')->name('konfirmBooking');
 		});
 	});
 });

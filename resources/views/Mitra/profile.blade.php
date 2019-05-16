@@ -28,7 +28,7 @@
                                                     <label for="text-input" class=" form-control-label">Nama Mitra</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="nama" placeholder="{{ Auth::user()->name }}" class="form-control">
+                                                    <input type="text" id="text-input" name="nama" value="{{ Auth::user()->name }}" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
@@ -36,7 +36,7 @@
                                                     <label for="text-input" class=" form-control-label">Nomor Telefon</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="number" id="text-input" name="nomor" class="form-control">
+                                                    <input type="number" id="text-input" name="nomor" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
@@ -44,7 +44,7 @@
                                                     <label for="file-input" class=" form-control-label">Foto Profil</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="file" id="file-input" name="photo" class="form-control-file">
+                                                    <input type="file" id="file-input" name="photo" class="form-control-file" required>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
@@ -52,7 +52,7 @@
                                                     <label for="select" class=" form-control-label">Kota</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <select name="kota" id="select" class="form-control">
+                                                    <select name="kota" id="select" class="form-control" required>
                                                         <option value="Jakarta Utara">Jakarta Utara</option>
                                                         <option value="Jakarta Pusat">Jakarta Pusat</option>
                                                         <option value="Jakarta Barat">Jakarta Barat</option>
@@ -66,7 +66,7 @@
                                                     <label for="textarea-input" class=" form-control-label">Alamat</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <textarea name="alamat" id="textarea-input" rows="2" placeholder="Content..." class="form-control"></textarea>
+                                                    <textarea name="alamat" id="textarea-input" rows="2" placeholder="Alamat Usahamu" class="form-control"></textarea required>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
@@ -74,7 +74,7 @@
                                                     <label for="select" class=" form-control-label">Tipe Mitra</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <select name="tipe" id="select" class="form-control">
+                                                    <select name="tipe" id="select" class="form-control" required>
                                                         <option value="Futsal">Futsal</option>
                                                         <option value="Tennis">Tennis</option>
                                                         <option value="Basket">Basket</option>
@@ -86,7 +86,7 @@
                                                     <label for="text-input" class=" form-control-label">Nama Rekening</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="na_rek" class="form-control">
+                                                    <input type="text" id="text-input" name="na_rek" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
@@ -94,7 +94,7 @@
                                                     <label for="text-input" class=" form-control-label">Nomor Rekening</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="number" id="text-input" name="no_rek" class="form-control">
+                                                    <input type="number" id="text-input" name="no_rek" class="form-control" required>
                                                 </div>
                                             </div>
                                         </form>

@@ -23,7 +23,7 @@
                                                     <label for="text-input" class=" form-control-label">Nama Lapangan</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="nama" class="form-control">
+                                                    <input type="text" id="text-input" name="nama" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
@@ -31,7 +31,7 @@
                                                     <label for="file-input" class=" form-control-label">Foto Lapangan</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="file" id="file-input" name="photo" class="form-control-file">
+                                                    <input type="file" id="file-input" name="photo" class="form-control-file" required>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
@@ -39,7 +39,19 @@
                                                     <label for="text-input" class=" form-control-label">Tarif Perjam</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="number" id="text-input" placeholder="100000" name="tarif" class="form-control">
+                                                    <input type="number" id="text-input" placeholder="100000" name="tarif" class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="select" class=" form-control-label">Tipe Lapangan</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <select name="tipe" id="select" class="form-control" required>
+                                                        <option value="Futsal">Futsal</option>
+                                                        <option value="Tennis">Tennis</option>
+                                                        <option value="Basket">Basket</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </form>

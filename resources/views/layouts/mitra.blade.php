@@ -20,11 +20,15 @@
 
     <!-- Main CSS-->
     <link href="{{ asset('css/theme.css')}}" rel="stylesheet" media="all">
+    <link href="{{ asset('css/css.css')}}" rel="stylesheet" media="all">
+    <link href="{{ asset('css/css.css')}}" rel="stylesheet" media="all" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('vendor/font-awesome-4.7/css/font-awesome.min.css')}}">
+
 
 </head>
 
 <body class="animsition">
-    <div class="page-wrapper">
+    <div class="page-wrapper primarysportq">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
             <div class="header-mobile__bar">
@@ -41,7 +45,7 @@
                     </div>
                 </div>
             </div>
-            <nav class="navbar-mobile">
+            <nav class="navbar-mobile primarysportq">
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
                         <li>
@@ -72,7 +76,7 @@
 
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
-            <div class="logo">
+            <div class="logo primarysportq">
                 <a href="#">
                     <img src="{{ asset('images/icon/logo.png')}}" alt="Cool Admin" />
                 </a>
@@ -101,7 +105,7 @@
             </div>
         </aside>
         <div class="page-container">
-            <header class="header-desktop">
+            <header class="header-desktop primarysportq">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap">
@@ -185,7 +189,7 @@
                                         </div>
                                     </div>
                                     <div class="noti__item js-item-menu">
-                                        <i class="zmdi zmdi-notifications"></i>
+                                        <i class="fa fa-bell" aria-hidden="true"></i>
                                         <span class="quantity">3</span>
                                         <div class="notifi-dropdown js-dropdown">
                                             <div class="notifi__title">
@@ -227,16 +231,16 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="{{ asset('images/icon/avatar-01.jpg')}}" alt="John Doe" />
+                                            <img src="{{ asset('images/icon/user.png')}}" alt="John Doe" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">{{ Auth::user()->name }}</a>
+                                            <a class="js-acc-btn text-light" href="#">{{ Auth::user()->name }}</a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="{{ asset('images/icon/avatar-01.jpg')}}" alt="John Doe" />
+                                                        <img src="{{ asset('images/icon/user.png')}}" alt="Mitra" />
                                                     </a>
                                                 </div>
                                                 <div class="content">

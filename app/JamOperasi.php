@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class JamOperasi extends Model
 {
     protected $fillable = [
-        'id', 'id_lapangan', 'jam', 'status',
+        'id', 'id_lapangan', 'jam', 'status', 'created_at',
     ];
 }

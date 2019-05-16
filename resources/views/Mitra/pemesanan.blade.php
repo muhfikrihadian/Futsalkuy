@@ -14,26 +14,32 @@
                                             <tr>
                                                 <th>Nama</th>
                                                 <th>Lapangan</th>
-                                                <th>Waktu</th>
+                                                <th>Jam</th>
                                                 <th>Nama Rekening</th>
                                                 <th>Nomor Rekening</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach($pemesanan as $booking)
                                             <tr>
-                                                <td>Muhammad Fikri Hadian</td>
-                                                <td>Lapangan A</td>
-                                                <td>13.00-14.00</td>
-                                                <td>Muhammad Fikri hadian</td>
-                                                <td>84293084329</td>
+                                                <td>{{ $booking->nama_customer }}</td>
+                                                <td>{{ $booking->id_lapangan }}</td>
+                                                <td>{{ $booking->jam }}</td>
+                                                <td>{{ $booking->nama_rekening }}</td>
+                                                <td>{{ $booking->nomor_rekening }}</td>
                                                 <td>
-                                                	<button type="button" class="btn btn-success btn-sm">
+                                <form action="{{ route('mitra.konfirmBooking') }}" method="POST" enctype="multipart/form-data">
+                                {{ csrf_field() }}
+                                            <input type="hidden" value="{{ $booking->id }}" class="form-control" name="id_booking">
+                                            <button type="submit" class="btn btn-success btn-sm">
                                             <i class="fa fa-check"></i>&nbsp; Terima</button>
+                                </form>
                                             <button type="button" class="btn btn-danger btn-sm">
                                             <i class="fa fa-close"></i>&nbsp; Tolak</button>
                                                 </td>
                                             </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

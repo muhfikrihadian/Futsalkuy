@@ -18,7 +18,10 @@ class CreateReservationsTable extends Migration
             $table->integer('id_lapangan');
             $table->string('nama_mitra');
             $table->string('nama_customer');
-            $table->time('waktu');
+            $table->string('nama_rekening');
+            $table->string('nomor_rekening');
+            $table->string('jam');
+            $table->string('bukti_transfer');
             $table->enum('status', ['Proses','Terbooking','Selesai']);
             $table->timestamps();
         });
