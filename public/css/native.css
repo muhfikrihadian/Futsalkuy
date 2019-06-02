@@ -31,9 +31,6 @@ table {
   transform: scale(1.03);
   background-color: #2d2c2c;
 }
-.show-menu {
-  padding: 0 5% 40px;
-}
 .show-menu a {
   height: 40px;
 }
@@ -84,6 +81,9 @@ table {
 /*css login page*/
 #loginPage {
   padding-top: 80px;
+}
+#loginPage nav.show-menu a:last-child {
+  border-top-color: #b4b4b4;
 }
 #loginPage nav a:last-child {
   font-weight: bold;
@@ -142,6 +142,7 @@ table {
 /*end of css login page*/
 
 nav {
+  box-shadow: 0 1px 3px rgba(22, 22, 22, 0.21);
   left: 0;
   transition: all 350ms;
   position: fixed !important;
@@ -172,11 +173,13 @@ nav a, nav #nav__brand {
   overflow: hidden;
   transition: all 250ms;
 }
-nav a, nav #nav__login {
+nav > a, nav #nav__login {
   height: 0;
   border-top: 0;
 }
-nav.show-menu #nav__login {
+nav.show-menu a:last-child {
+  background-color: transparent !important;
+  border-radius: 0 !important;
   border-top: 1px solid #dfdfdf;
 }
 header {
