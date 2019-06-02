@@ -1,0 +1,391 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  text-decoration: none;
+  outline: none;
+  scroll-behavior: smooth;
+}
+p, h1, h2, h3, h4, h5, h6, small, time, figcaption {
+  color: #727272;
+}
+a {
+  color: inherit;
+}
+span {
+  color: inherit;
+}
+textarea {
+  resize: vertical;
+}
+table {
+  border-collapse: collapse;
+}
+.container {
+  width: 90%;
+  padding: 0;
+  margin: 0 auto;
+}
+.scrolled {
+  transform: scale(1.03);
+  background-color: #2d2c2c;
+}
+.show-menu a {
+  height: 40px;
+}
+.show-menu #nav__login {
+  height: 50px;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(150deg, rgba(0, 0, 0, 0.56) 40%, rgba(42, 205, 102, 0.56));
+}
+.btn {
+  transition: all 250ms;
+  justify-content: center;
+  padding: 0 30px;
+  height: 40px;
+  display: inline-flex;
+  text-transform: capitalize;
+  align-items: center;
+}
+.btn .bx {
+  margin-left: 10px;
+  font-size: 20px;
+}
+.rounded {
+  border-radius: 20px;
+}
+.orange {
+  background-color: #E69B36;
+  color: #fff;
+}
+*:not(footer).orange:hover {
+  background-color: #cf8829;
+}
+.orange:focus {
+  background-color: #c68024;
+}
+.orange .bx {
+  color: #fff;
+}
+#nav__brand i {
+  cursor: pointer;
+}
+
+/*css login page*/
+#loginPage {
+  padding-top: 80px;
+}
+#loginPage nav.show-menu a:last-child {
+  border-top-color: #b4b4b4;
+}
+#loginPage nav a:last-child {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+#loginPage #my_profile {
+  text-align: center;
+}
+#loginPage #my_profile img {
+  margin-bottom: 10px;
+}
+#loginPage #my_profile figcaption {
+  display: flex;
+  flex-direction: column;
+}
+#loginPage #my_profile figcaption strong {
+  font-size: 1.2em;
+}
+#loginPage #my_profile figcaption small {
+  margin: 10px 0;
+}
+#loginPage #my_profile figcaption address, #loginPage #my_profile figcaption small {
+  font-size: 15px;
+}
+#loginPage main .row > div {
+  padding-top: 15px;
+  border-radius: 8px;
+  padding-bottom: 15px;
+  box-shadow: 0 3px 3px rgba(28, 28, 28, 0.3);
+}
+#loginPage main .row > div h1 {
+  margin-bottom: 30px;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+}
+#loginPage main .row > div ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+#loginPage main .row > div ul li span, #loginPage main .row > div ul li time {
+  color: #fff;
+}
+#loginPage #jadwal_akan_datang {
+  background-color: #52A7D8;
+}
+#loginPage #jadwal_sudah_lalu {
+  background-color: #61DB92;
+}
+#loginPage footer {
+  margin: 50px -0.5rem 0;
+  width: calc(100% + 1rem);
+}
+/*end of css login page*/
+
+nav {
+  box-shadow: 0 1px 3px rgba(22, 22, 22, 0.21);
+  left: 0;
+  transition: all 350ms;
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  z-index: 1;
+  flex-direction: column;
+  background-color: #2d2c2c;
+  color: #fff;
+  padding: 0 5%;
+}
+#loginPage nav {
+  color: #6D6D6D;
+  background-color: #EEEEEE;
+}
+nav #nav__brand {
+  font-weight: bolder;
+  font-size: 22px;
+  height: 50px;
+  justify-content: space-between;
+}
+nav a, nav #nav__brand {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  overflow: hidden;
+  transition: all 250ms;
+}
+nav > a, nav #nav__login {
+  height: 0;
+  border-top: 0;
+}
+nav.show-menu a:last-child {
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  border-top: 1px solid #dfdfdf;
+}
+header {
+  position: relative;
+  background-image: url("../images/beranda.jpg");
+  height: 80vh;
+  background-position: 40% center;
+}
+header .overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+header h1 {
+  color: #fff;
+  text-align: center;
+}
+header .btn {
+  position: absolute;
+  bottom: 0;
+  transition: all 250ms;
+  transform: translateY(50%);
+}
+
+main section {
+  padding-top: 70px;
+  padding-bottom: 35px;
+}
+main section .container > h1:first-child {
+  text-align: center;
+  font-weight: bolder;
+  margin-bottom: 40px;
+}
+main #keuntungan figure {
+  text-align: center;
+}
+main #keuntungan figure figcaption {
+  font-size: 25px;
+  padding: 15px 0;
+  font-weight: bold;
+}
+main #gallery {
+  background-image: linear-gradient(45deg, rgba(46, 204, 113, 0.64), rgba(70, 137, 189, 0.84));
+}
+main #gallery h1 {
+  color: #fff;
+}
+main #gallery .row:first-of-type img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 4px 3px 4px rgba(29, 29, 29, 0.51);
+}
+
+main #caraBooking li {
+  font-size: 16px;
+  color: #4E4E4E;
+  line-height: calc(16px * 1.5);
+}
+main #aboutus {
+  background-color: #F9F9F9;
+}
+main #aboutus figure {
+  text-align: center;
+  margin-bottom: 35px;
+}
+main #aboutus figure img {
+  border: 1px solid #707070;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+main #aboutus figcaption {
+  display: flex;
+  padding: 10px 0;
+  flex-direction: column;
+}
+main #aboutus .row .col-md-6:first-of-type {
+  text-align: center;
+}
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 55px;
+}
+footer small, footer time {
+  font-size: 18px;
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    padding: 0 5%;
+    background-color: transparent;
+    height: 70px;
+    flex-direction: row;
+    align-items: center;
+    font-size: 18px;
+  }
+  nav a, nav #nav__login, nav #nav__brand {
+    height: auto;
+    overflow: visible;
+    position: relative;
+  }
+  nav a:not(#nav__brand):not(:last-of-type)::after {
+    content: '';
+    position: absolute;
+    transition: all 250ms;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    background-color: #F0F0F0;
+    height: 3px;
+  }
+  #loginPage nav a:not(#nav__brand):not(:last-of-type)::after {
+    background-color: #6D6D6D;
+  }
+  nav a:not(#nav__brand):not(:last-of-type):hover::after {
+    width: 100%;
+  }
+  nav a:not(:last-of-type) {
+    margin-right: 15px;
+  }
+  nav #nav__login {
+    margin-left: 15px;
+    padding: 8px 20px;
+    position: relative;
+  }
+  nav #nav__login::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 85%;
+    background-color: #F0F0F0;
+    width: 3px;
+  }
+  nav #nav__brand {
+    font-size: 25px;
+    margin-right: auto;
+  }
+  header h1 {
+    font-size: 45px;
+  }
+  main section {
+    padding: 80px 0;
+  }
+  main section .container > h1:first-child {
+    font-size: 35px;
+    position: relative;
+    margin-bottom: 80px;
+  }
+  main #keuntungan .container > h1:first-child, main #aboutus .container > h1:first-child {
+    text-align: left;
+  }
+  main #gallery .container > h1:first-child, main #caraBooking .container > h1:first-child {
+    text-align: right;
+  }
+  main #gallery #gallery__btn {
+    float: right;
+    clear: both;
+  }
+  main section .container > h1:first-child::after {
+    background-color: #E7A64F;
+    height: 3.5px;
+    width: 30%;
+    max-width: 200px;
+    position: absolute;
+    bottom: -20px;
+    content: '';
+  }
+  main #keuntungan .container > h1:first-child::after, main #aboutus .container > h1:first-child::after {
+    left: 0;
+  }
+  main #gallery .container > h1:first-child::after, main #caraBooking .container > h1:first-child::after {
+    right: 0;
+  }
+  main #caraBooking li {
+    font-size: 24px;
+    line-height: calc(24px * 1.5);
+  }
+  main #aboutus .row .col-md-6:first-of-type {
+    font-size: 20px;
+    text-align: left;
+  }
+  main #aboutus .row .col-md-6:last-of-type figure:nth-of-type(2) {
+    transform: translateY(-50%);
+  }
+
+  /*login page*/
+  #loginPage {
+    padding-top: 120px;
+  }
+  #loginPage #my_profile {
+    text-align: left;
+  }
+  #loginPage #my_profile figcaption address {
+    word-wrap: break-word;
+  }
+  #loginPage footer {
+    position: fixed;
+    bottom: 0;
+  }
+  /*end of login page*/
+}
