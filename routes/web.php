@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-	return view('welcome');
-});
+// Route::get('/', function () {
+// 	return view('welcome');
+// });
+Route::view('/', 'landing');
 
 Auth::routes();
 
@@ -34,8 +35,8 @@ Route::middleware(['auth', 'CustomerRole'])->group(function(){
 				Route::get('/beranda', 'CustomerController@indexFutsal')->name('indexFutsal');
 				Route::get('/lapangan/{id}', 'CustomerController@lapangan')->name('lapangan');
 				Route::post('/booking', 'CustomerController@booking')->name('booking');
-				});	
-		});	
+				});
+		});
 	});
 });
 
@@ -58,4 +59,3 @@ Route::middleware(['auth', 'MitraRole'])->group(function(){
 		});
 	});
 });
-
