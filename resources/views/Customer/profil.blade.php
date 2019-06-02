@@ -10,7 +10,7 @@
   </head>
   <body id="loginPage" class="row justify-content-around px-2 px-md-5 mx-0">
     <nav class="col">
-      <span id="nav__brand">FutsalKuy <i class='bx bx-menu d-inline d-md-none'></i></span>
+      <span id="nav__brand"><a href="{{ url('/') }}">FutsalKuy</a> <i class='bx bx-menu d-inline d-md-none'></i></span>
       <a href="#keuntungan">keuntungan</a>
       <a href="#gallery">gallery kami</a>
       <a href="#caraBooking">cara booking</a>
