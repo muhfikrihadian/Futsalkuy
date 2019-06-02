@@ -15,13 +15,13 @@
       <a href="#gallery">gallery kami</a>
       <a href="#caraBooking">cara booking</a>
       <a href="">tentang kami</a>
-      <a href="">Fikri Hadian</a>
+      <a href="">{{ Auth::user()->name }}</a>
     </nav>
     <aside class="col-12 col-md-3 mb-3 mb-md-0 pl-md-5 d-flex justify-content-center">
       <figure id="my_profile">
         <img src="{{ asset('images/Users/people.png') }}" height="150" alt="My Profile">
         <figcaption>
-          <strong>Fikri Hadian</strong>
+          <strong>{{ Auth::user()->name }}</strong>
           <small>Bergabung pada 22 Maret 2019</small>
           <address>Alamat tinggal Jln Swadaya Gudang baru, Ciganjur, Jakarta Selatan</address>
         </figcaption>
