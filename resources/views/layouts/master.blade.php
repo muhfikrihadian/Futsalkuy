@@ -17,7 +17,12 @@
           <a href="#gallery">gallery kami</a>
           <a href="#caraBooking">cara booking</a>
           <a href="">tentang kami</a>
-          <a href="" id="nav__login">masuk</a>
+          @guest
+            <a href="{{ route('login') }}" id="nav__login">masuk</a>
+          @endguest
+          @auth
+            <a href="{{ route('login') }}" class="orange rounded" id="nav__login">dashboard</a>
+          @endauth
         </nav>
         @yield('heading-text')
         @yield('button-header')
@@ -30,21 +35,7 @@
       <small>Copyright <time>{{ date('Y') }}</time> | PT Sportq</small>
     </footer>
     <script src="{{ asset('js/jquery.js') }}" charset="utf-8"></script>
-    <script>
-      $(document).ready(function() {
-        $("#nav__brand i").click(function() {
-          $(this).parents('nav').toggleClass("show-menu");
-        });
-        $(window).scroll(function() {
-          if ($(this).scrollTop() > 50) {
-            $("nav").addClass("scrolled");
-          }
-          else {
-            $("nav").removeClass("scrolled");
-          }
-        });
-      });
-    </script>
+    <script src="{{ asset('js/native.js') }}" charset="utf-8"></script>
     @yield('script')
   </body>
 </html>

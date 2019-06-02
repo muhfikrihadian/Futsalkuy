@@ -30,12 +30,13 @@ Route::middleware(['auth', 'AdminRole'])->group(function(){
 Route::middleware(['auth', 'CustomerRole'])->group(function(){
 	Route::prefix('customer')->group(function(){
 		Route::name('customer.')->group(function(){
+			Route::view('profile', 'Customer.profil'); /*nanti ganti route::view nya jadi route::get sama ganti Customer.profil jd controller lu*/
 			Route::get('/beranda', 'CustomerController@index')->name('index');
 			Route::prefix('futsal')->group(function(){
 				Route::get('/beranda', 'CustomerController@indexFutsal')->name('indexFutsal');
 				Route::get('/lapangan/{id}', 'CustomerController@lapangan')->name('lapangan');
 				Route::post('/booking', 'CustomerController@booking')->name('booking');
-				});
+			});
 		});
 	});
 });

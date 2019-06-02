@@ -31,6 +31,9 @@ table {
   transform: scale(1.03);
   background-color: #2d2c2c;
 }
+.show-menu {
+  padding: 0 5% 40px;
+}
 .show-menu a {
   height: 40px;
 }
@@ -46,6 +49,7 @@ table {
   background-image: linear-gradient(150deg, rgba(0, 0, 0, 0.56) 40%, rgba(42, 205, 102, 0.56));
 }
 .btn {
+  transition: all 250ms;
   justify-content: center;
   padding: 0 30px;
   height: 40px;
@@ -64,6 +68,12 @@ table {
   background-color: #E69B36;
   color: #fff;
 }
+*:not(footer).orange:hover {
+  background-color: #cf8829;
+}
+.orange:focus {
+  background-color: #c68024;
+}
 .orange .bx {
   color: #fff;
 }
@@ -71,9 +81,70 @@ table {
   cursor: pointer;
 }
 
+/*css login page*/
+#loginPage {
+  padding-top: 80px;
+}
+#loginPage nav a:last-child {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+#loginPage #my_profile {
+  text-align: center;
+}
+#loginPage #my_profile img {
+  margin-bottom: 10px;
+}
+#loginPage #my_profile figcaption {
+  display: flex;
+  flex-direction: column;
+}
+#loginPage #my_profile figcaption strong {
+  font-size: 1.2em;
+}
+#loginPage #my_profile figcaption small {
+  margin: 10px 0;
+}
+#loginPage #my_profile figcaption address, #loginPage #my_profile figcaption small {
+  font-size: 15px;
+}
+#loginPage main .row > div {
+  padding-top: 15px;
+  border-radius: 8px;
+  padding-bottom: 15px;
+  box-shadow: 0 3px 3px rgba(28, 28, 28, 0.3);
+}
+#loginPage main .row > div h1 {
+  margin-bottom: 30px;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+}
+#loginPage main .row > div ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+#loginPage main .row > div ul li span, #loginPage main .row > div ul li time {
+  color: #fff;
+}
+#loginPage #jadwal_akan_datang {
+  background-color: #52A7D8;
+}
+#loginPage #jadwal_sudah_lalu {
+  background-color: #61DB92;
+}
+#loginPage footer {
+  margin: 50px -0.5rem 0;
+  width: calc(100% + 1rem);
+}
+/*end of css login page*/
+
 nav {
+  left: 0;
   transition: all 350ms;
-  position: fixed;
+  position: fixed !important;
   top: 0;
   width: 100%;
   overflow: hidden;
@@ -84,7 +155,12 @@ nav {
   color: #fff;
   padding: 0 5%;
 }
+#loginPage nav {
+  color: #6D6D6D;
+  background-color: #EEEEEE;
+}
 nav #nav__brand {
+  font-weight: bolder;
   font-size: 22px;
   height: 50px;
   justify-content: space-between;
@@ -122,6 +198,7 @@ header h1 {
 header .btn {
   position: absolute;
   bottom: 0;
+  transition: all 250ms;
   transform: translateY(50%);
 }
 
@@ -195,6 +272,7 @@ footer small, footer time {
 
 @media screen and (min-width: 768px) {
   nav {
+    padding: 0 5%;
     background-color: transparent;
     height: 70px;
     flex-direction: row;
@@ -204,23 +282,41 @@ footer small, footer time {
   nav a, nav #nav__login, nav #nav__brand {
     height: auto;
     overflow: visible;
+    position: relative;
   }
-  nav a:not(#nav__login) {
+  nav a:not(#nav__brand):not(:last-of-type)::after {
+    content: '';
+    position: absolute;
+    transition: all 250ms;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    background-color: #F0F0F0;
+    height: 3px;
+  }
+  #loginPage nav a:not(#nav__brand):not(:last-of-type)::after {
+    background-color: #6D6D6D;
+  }
+  nav a:not(#nav__brand):not(:last-of-type):hover::after {
+    width: 100%;
+  }
+  nav a:not(:last-of-type) {
     margin-right: 15px;
   }
   nav #nav__login {
-    padding-left: 7.5px;
-    margin-left: 7.5px;
+    margin-left: 15px;
+    padding: 8px 20px;
     position: relative;
   }
   nav #nav__login::before {
     content: '';
     position: absolute;
-    left: -7.5px;
-    top: 0;
-    height: 100%;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 85%;
     background-color: #F0F0F0;
-    width: 2px;
+    width: 3px;
   }
   nav #nav__brand {
     font-size: 25px;
@@ -249,7 +345,7 @@ footer small, footer time {
   }
   main section .container > h1:first-child::after {
     background-color: #E7A64F;
-    height: 3px;
+    height: 3.5px;
     width: 30%;
     max-width: 200px;
     position: absolute;
@@ -273,4 +369,20 @@ footer small, footer time {
   main #aboutus .row .col-md-6:last-of-type figure:nth-of-type(2) {
     transform: translateY(-50%);
   }
+
+  /*login page*/
+  #loginPage {
+    padding-top: 120px;
+  }
+  #loginPage #my_profile {
+    text-align: left;
+  }
+  #loginPage #my_profile figcaption address {
+    word-wrap: break-word;
+  }
+  #loginPage footer {
+    position: fixed;
+    bottom: 0;
+  }
+  /*end of login page*/
 }
