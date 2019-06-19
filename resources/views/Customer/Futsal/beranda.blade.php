@@ -46,25 +46,19 @@
       </div>
     </div>
     <div class="col-md-8 margintopdp">
-      @if(isset($field))
-      @foreach($field as $lapangan)
+      @if(isset($vendor))
+      @foreach($vendor as $mitra)
       <div class="card mb-4 wow fadeInUp">
-        <img class="card-img-top" src="{{ asset('images/Lapangan/'.$lapangan->foto)}}" alt="Card image cap">
+        <img class="card-img-top" src="{{ asset('images/Users/Mitra/'.$mitra->foto)}}" alt="Card image cap">
         <div class="card-body">
-          <h4 class="card-title">{{ $lapangan->nama }}</h4>
-          <p class="card-text">Rp.{{ $lapangan->tarif }} /Jam</p>
-          <a href="{{ route('customer.lapangan', ['id' => $lapangan->id]) }}" class="btn btn-primary">Read More &rarr;</a>
+          <h4 class="card-title">{{ $mitra->nama }}</h4>
+          <p class="card-text">{{ $mitra->kota }}</p>
+          <a href="{{ route('customer.mitraInfo', ['nama' => $mitra->nama]) }}" class="btn btn-primary">Lihat &rarr;</a>
         </div>
-        @foreach($mitra as $vendor)
-        <div class="card-footer text-muted">
-          {{ $vendor->alamat }}
-          <a href="#">{{ $vendor->nama }}</a>
-        </div>
-        @endforeach
       </div>
       @endforeach
       @endif
-      {{ $field->links() }}
+      {{ $vendor->links() }}
     </div>
   </div>
 </div>

@@ -231,8 +231,14 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="{{ asset('images/icon/user.png')}}" alt="John Doe" />
+                                        @if(isset($profile))
+                                        @foreach($profile as $data)
+                                            <img src="{{ asset('images/icon/'.$data->foto)}}" alt="John Doe" />
+                                        @endforeach
+                                        @else
+                                        <img src="{{ asset('images/icon/user.png')}}" alt="John Doe" />
                                         </div>
+                                        @endif
                                         <div class="content">
                                             <a class="js-acc-btn text-light" href="#">{{ Auth::user()->name }}</a>
                                         </div>
@@ -251,10 +257,17 @@
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
+                                            @if(isset($profile))
                                                 <div class="account-dropdown__item">
                                                     <a href="{{ route('mitra.profile') }}">
-                                                        <i class="zmdi zmdi-account"></i>Profile</a>
+                                                        <i class="zmdi zmdi-account"></i>Perbarui Profile</a>
                                                 </div>
+                                                @elseif(!isset($profile))
+                                                <div class="account-dropdown__item">
+                                                    <a href="{{ route('mitra.profile') }}">
+                                                        <i class="zmdi zmdi-account"></i>Isi Profile</a>
+                                                </div>
+                                                @endif
                                                 <div class="account-dropdown__item">
                                                     <a href="{{ route('mitra.settings') }}">
                                                         <i class="zmdi zmdi-settings"></i>Setting</a>

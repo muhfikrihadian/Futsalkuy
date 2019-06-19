@@ -19,9 +19,12 @@ class CustomerController extends Controller
     {
         return view('Customer.beranda');
     }
+    public function profile(){
+        return view('Customer.profil');
+    }
     public function indexFutsal()
     {
-    	$data['field'] = Lapangan::orderBy('created_at', 'desc')->orderBy('tipe_lapangan', 'Futsal')->paginate(2);
+    	$data['vendor'] = Profile_Mitra::orderBy('created_at', 'desc')->orderBy('tipe_mitra', 'Futsal')->paginate(2);
         $lapangan = Lapangan::all();
         foreach($lapangan as $field)
         $data['mitra'] = Profile_Mitra::orderBy('id', $field->id_mitra)->get();
@@ -52,5 +55,13 @@ class CustomerController extends Controller
         $save->status = "Proses";
         $save->save();
         return redirect()->route('customer.index');
+    }
+    public function mitra($nama){
+        $vendorid = Profile_Mitra::where('nama', $nama)->get();
+        foreach($vendorid as $idvendor)
+        $idv = $idvendor->id;
+        $data['field'] = Lapangan::where('id_mitra', $idv)->get();
+        $data['vendor'] = Profile_Mitra::where('nama', $nama)->get();
+        return view('Customer.Futsal.mitra', $data);
     }
 }
