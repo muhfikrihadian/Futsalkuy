@@ -53,7 +53,7 @@
         <div class="card-body">
           <h4 class="card-title">{{ $mitra->nama }}</h4>
           <p class="card-text">{{ $mitra->kota }}</p>
-          <a href="{{ route('customer.mitraInfo', ['nama' => $mitra->nama]) }}" class="btn btn-primary">Lihat &rarr;</a>
+          <a href="{{ route('customer.mitraInfo', Crypt::encryptString($mitra->id)) }}" class="btn btn-primary">Lihat &rarr;</a>
         </div>
       </div>
       @endforeach

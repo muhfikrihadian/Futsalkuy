@@ -12,6 +12,7 @@ use App\Profile_Customer;
 use App\Profile_Mitra;
 use App\Reservation;
 use App\User;
+use Crypt;
 
 class CustomerController extends Controller
 {
@@ -25,9 +26,6 @@ class CustomerController extends Controller
     public function indexFutsal()
     {
     	$data['vendor'] = Profile_Mitra::orderBy('created_at', 'desc')->orderBy('tipe_mitra', 'Futsal')->paginate(2);
-        $lapangan = Lapangan::all();
-        foreach($lapangan as $field)
-        $data['mitra'] = Profile_Mitra::orderBy('id', $field->id_mitra)->get();
         return view('Customer.Futsal.beranda', $data);
     }
     public function lapangan($id){
@@ -57,11 +55,11 @@ class CustomerController extends Controller
         return redirect()->route('customer.index');
     }
     public function mitra($nama){
-        $vendorid = Profile_Mitra::where('nama', $nama)->get();
-        foreach($vendorid as $idvendor)
-        $idv = $idvendor->id;
-        $data['field'] = Lapangan::where('id_mitra', $idv)->get();
-        $data['vendor'] = Profile_Mitra::where('nama', $nama)->get();
+        $nama = Crypt::decryptString($nama);
+        $vendorid = Profile_Mitra::where('id', $nama)->first();
+        $id = $vendorid->id;
+        $data['field'] = Lapangan::where('id_mitra', $id)->get();
+        $data['vendor'] = $vendorid;
         return view('Customer.Futsal.mitra', $data);
     }
 }

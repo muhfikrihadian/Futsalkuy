@@ -32,6 +32,7 @@
     </div>
   </div>
   <div class="row">
+  <div class="col-md-10 offset-md-1">
     <div class="card-group">
       @if(isset($field))
       @foreach($field as $lapangan)
@@ -51,6 +52,7 @@
       </div>
       @endforeach
       @endif
+    </div>
     </div>
   </div>
 </div>
