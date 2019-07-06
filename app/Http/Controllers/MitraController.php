@@ -15,8 +15,21 @@ use App\User;
 
 class MitraController extends Controller
 {
+    public function validProfile(){
+        view()->composer(
+            'layouts.mitra', 
+            function ($view) {
+                $view->with('profile', Profile_Mitra::orderBy('id_user', '=', Auth::user()->id)->get());
+            }
+        );
+    }
     public function index()
     {
+        // $mitra = Profile_Mitra::where('id_user', Auth::user()->id)->get();
+        // if(isset($mitra))
+        // foreach($mitra as $vendor)
+        // $idv = $vendor->id;
+        // $data['field'] = Lapangan::where('id_mitra', $idv)->firstOrFail()->count();   
         return view('Mitra.dashboard');
     }
     public function pemesanan()

@@ -20,6 +20,7 @@ class CreateReservationsTable extends Migration
             $table->string('nama_customer');
             $table->string('nama_rekening');
             $table->string('nomor_rekening');
+            $table->string('tanggal');
             $table->string('jam');
             $table->string('bukti_transfer');
             $table->enum('status', ['Proses','Terbooking','Selesai']);

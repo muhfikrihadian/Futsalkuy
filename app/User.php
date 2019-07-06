@@ -26,4 +26,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    public function profile__mitras(){
+        return $this->hasOne('App\Profile_Mitra::class');
+    }
+    public function profile__customers(){
+        return $this->hasOne('App\Profile_Customer::class');
+    }
 }

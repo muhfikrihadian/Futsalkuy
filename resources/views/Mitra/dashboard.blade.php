@@ -8,12 +8,12 @@
                     <div class="col-sm-6 col-lg-6">
                         <div class="overview-item overview-item--c2">
                             <div class="overview__inner">
-                                <div class="overview-box clearfix">
+                                <div class="overview-box clearfix cardgreenindex">
                                     <div class="icon">
                                         <i class="fas fa-map-marker-alt"></i>
                                     </div>
                                     <div class="text">
-                                        <h2>2</h2>
+                                        <h2></h2>
                                         <span>Lapangan</span>
                                     </div>
                                 </div>
@@ -23,7 +23,7 @@
                     <div class="col-sm-6 col-lg-6">
                         <div class="overview-item overview-item--c2">
                             <div class="overview__inner">
-                                <div class="overview-box clearfix">
+                                <div class="overview-box clearfix cardgreenindex">
                                     <div class="icon">
                                         <i class="fas fa-money-bill-alt"></i>
                                     </div>

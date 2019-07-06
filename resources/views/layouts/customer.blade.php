@@ -37,7 +37,7 @@
             <span class="no-icon">{{ Auth::user()->name }}</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Profil</a>
+            <a class="dropdown-item" href="{{ route('customer.profile') }}">Profil</a>
             <a href="{{ route('logout') }}" class="dropdown-item"
             onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">Log Out <i class="fa fa-sign-out" aria-hidden="true"></i></a>

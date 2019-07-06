@@ -79,7 +79,7 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <form action="{{ route('customer.booking') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('customer.bookingData') }}" method="POST" enctype="multipart/form-data">
                                 {{ csrf_field() }}
             <div class="modal-body">
               <div class="row">
@@ -89,43 +89,15 @@
                                             <input type="hidden" value="{{ Auth::user()->name }}" class="form-control" name="nama_customer">
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label for="text-input" class=" form-control-label">Nama Rekeningmu</label>
+                                                    <label for="tanggal" class=" form-control-label datepicker">Pilih Tanggal</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="narek" class="form-control" required>
+                                                    <input type="date" id="tanggal" name="tanggal" class="form-control-file" required>
                                                 </div>
                                             </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="text-input" class=" form-control-label">Nomor Rekeningmu</label>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <input type="number" id="text-input" name="norek" class="form-control" required>
-                                                </div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="file-input" class=" form-control-label">Bukti Transfer</label>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <input type="file" id="file-input" name="bukti" class="form-control-file" required>
-                                                </div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="select" class=" form-control-label">Pilih Jam</label>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <select name="jam" id="select" class="form-control" required>
-                                                    @foreach($free as $jam)
-                                                        <option value="{{ $jam->jam }}">{{ $jam->jam }}</option>
-                                                    @endforeach
-                                                    </select>
-                                                </div>
-                                            </div>
-                                                @foreach($vendor as $mitra)
+                                                <!-- @foreach($vendor as $mitra)
                                                 <input type="hidden" value="{{ $mitra->nama }}" class="form-control" name="nama_mitra">
-                                                @endforeach
+                                                @endforeach -->
                                                 <input type="hidden" value="{{ $field[0]->id }}" class="form-control" name="id_lapangan">
                                     </div>
                                 </div>

@@ -37,4 +37,5 @@ class CreateProfileMitrasTable extends Migration
     {
         Schema::dropIfExists('profile__mitras');
     }
+
 }

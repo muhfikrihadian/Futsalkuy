@@ -11,7 +11,7 @@
 	height: 50px;
 }
 .primarysportq{
-	background-color: #34c099;
+	background-color: #45afe6;
 }
 .bgcolorsportq{
 	background-color: #e9ebee;
@@ -19,4 +19,7 @@
 .lapanganslider{
 	width: 150px;
 	height: 200px;
+}
+.cardgreenindex{
+	padding: 20px;
 }
