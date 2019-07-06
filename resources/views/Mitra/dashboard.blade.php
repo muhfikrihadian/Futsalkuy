@@ -13,7 +13,7 @@
                                         <i class="fas fa-map-marker-alt"></i>
                                     </div>
                                     <div class="text">
-                                        <h2>{{ $field }}</h2>
+                                        <h2></h2>
                                         <span>Lapangan</span>
                                     </div>
                                 </div>

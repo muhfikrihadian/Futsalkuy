@@ -38,7 +38,9 @@ Route::middleware(['auth', 'CustomerRole'])->group(function(){
 				Route::get('/mitra/{nama}', 'CustomerController@mitra')->name('mitraInfo');
 				Route::get('/beranda', 'CustomerController@indexFutsal')->name('indexFutsal');
 				Route::get('/lapangan/lapangan_id={id}', 'CustomerController@lapangan')->name('lapangan');
-				Route::post('/booking', 'CustomerController@booking')->name('booking');
+				Route::post('/bookingProses', 'CustomerController@booking')->name('bookingProses');
+				Route::post('/booking', 'CustomerController@bookingData')->name('bookingData');
+				Route::get('/booking', 'CustomerController@bookingPage')->name('bookingPage');
 			});
 		});
 	});

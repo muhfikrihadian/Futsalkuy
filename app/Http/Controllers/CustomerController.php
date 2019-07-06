@@ -34,8 +34,16 @@ class CustomerController extends Controller
     	foreach($lapangan as $field)
     	$data['vendor'] = Profile_Mitra::where('id', '=', $field->id_mitra)->get();
         $data['waktu'] = JamOperasi::where('id_lapangan', '=', $id)->get();
-        $data['free'] = JamOperasi::orderBy('id_lapangan', $id)->orderBy('status', 'Tersedia')->get();
+        $data['free'] = JamOperasi::where('id_lapangan', $id)->where('status', 'Tersedia')->get();
         return view('Customer.Futsal.lapangan', $data);
+    }
+    public function bookingData(Request $r){
+        $data['valid'] = Reservation::where('id_lapangan', $r->id_lapangan)->where('tanggal', $r->tanggal)->get();
+        $data['jam'] = JamOperasi::where('id_lapangan', $r->id_lapangan)->get();
+        return view('Customer.Futsal.booking', $data);
+    }
+    public function bookingPage(){
+        return view('Customer.Futsal.booking');
     }
     public function booking(Request $r){
         $file = $r->file('bukti');
@@ -48,6 +56,7 @@ class CustomerController extends Controller
         $save->nama_customer = $r->nama_customer;
         $save->nama_rekening = $r->narek;
         $save->nomor_rekening = $r->norek;
+        $save->jam = $r->tarif;
         $save->jam = $r->jam;
         $save->bukti_transfer = $gambar;
         $save->status = "Proses";

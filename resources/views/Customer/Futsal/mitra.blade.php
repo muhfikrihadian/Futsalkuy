@@ -30,20 +30,36 @@
         </a>
       </div>
     </div>
+    <div class="col-md-10 offset-md-1 bg-white" style="height: 150px;">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="{{ asset('images/Users/Mitra/v.jpeg') }}" style="width: 100%; height: 100px;">
+      </div>
+      <div class="col-md-6">
+      <h4>Nama Mitra : Planet Futsal</h4>
+      <h4>Nomor Telephone : Planet Futsal</h4>
+      <h4>Kota : Jakarta Utara</h4>
+      <h4>Alamat : Jalan Blablabla</h4>
+      </div>
+      </div>
+    </div>
   </div>
   <div class="row">
+  <center>
+  <h1 style="text-align: center; margin-left: 300px;">Daftar Lapangan Planet Futsal</h1>
+  <hr>
+  </center>
   <div class="col-md-10 offset-md-1">
     <div class="card-group">
       @if(isset($field))
       @foreach($field as $lapangan)
-      <div class="card mr-4 ml-4 mt-4 mb-4 col-md-4">
-        <img src="{{ asset('images/Lapangan/'.$lapangan->foto)}}" class="d-block w-100" class="card-img-top" style="width: 100%;" alt="...">
+      <div class="card mr-2 ml-2 mt-4 mb-4 col-md-4">
+        <img src="{{ asset('images/Lapangan/'.$lapangan->foto)}}" class="d-block w-100" class="card-img-top" style="width: 100%; height: 100" alt="...">
         <div class="card-body">
         <h5 class="card-title">{{ $lapangan->nama }}</h5>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">Rp.{{ $lapangan->tarif }} /Jam</li>
             <li class="list-group-item">Rating : 7/10</li>
-            <li class="list-group-item">Status : Tidak Aktif</li>
           </ul>
         </div>
         <div class="card-footer">

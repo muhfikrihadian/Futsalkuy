@@ -25,11 +25,12 @@ class MitraController extends Controller
     }
     public function index()
     {
-        $mitra = Profile_Mitra::where('id_user', Auth::user()->id)->get();
-        foreach($mitra as $vendor)
-        $idv = $vendor->id;
-        $data['field'] = Lapangan::where('id_mitra', $idv)->count();   
-        return view('Mitra.dashboard', $data);
+        // $mitra = Profile_Mitra::where('id_user', Auth::user()->id)->get();
+        // if(isset($mitra))
+        // foreach($mitra as $vendor)
+        // $idv = $vendor->id;
+        // $data['field'] = Lapangan::where('id_mitra', $idv)->firstOrFail()->count();   
+        return view('Mitra.dashboard');
     }
     public function pemesanan()
     {
