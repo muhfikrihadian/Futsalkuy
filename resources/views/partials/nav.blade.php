@@ -9,16 +9,16 @@
       <form action="" class="row justify-content-center" method="get">
         {{ csrf_field() }}
         <div class="col-3">
-          <select class="" name="">
+          <select required>
             <option value="" selected disabled>Cari Berdasarkan</option>
             <option value="">Kategori Olahraga</option>
             <option value="">Kota</option>
           </select>
         </div>
         <div class="col">
-          <input type="text" placeholder="Cari Lapangan. Contoh: Futsal Cawang">
+          <input type="text" placeholder="Cari Lapangan. Contoh: Futsal Cawang" required>
         </div>
-        <button type="submit"><i class='bx bx-search-alt'></i></button>
+        <button type="submit" class="btn"><i class='bx bx-search-alt'></i></button>
       </form>
     </li>
     @guest
