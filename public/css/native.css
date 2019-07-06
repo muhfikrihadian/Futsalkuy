@@ -19,6 +19,10 @@ input {
   padding: 0 10px;
   border-radius: 5px;
 }
+#navDesktop .dropdown-menu {
+  transform: translateX(-50%);
+  left: 50%;
+}
 .btn {
   height: 35px;
   display: flex;
@@ -40,7 +44,6 @@ input {
 }
 #navDesktop {
   padding: 0 5%;
-  overflow: hidden;
   height: 80px;
   background-color: #56a2d9;
 }
@@ -53,6 +56,9 @@ input {
   color: #fff;
   padding-right: 15px;
   align-items: center;
+}
+#navDesktop ul li:hover {
+  color: #d5d5d5;
 }
 #navDesktop ul li:first-child {
   margin-right: auto;
@@ -103,12 +109,15 @@ input {
   align-items: center;
   justify-content: center;
   padding: 0 15px;
-  right: calc(15% - 15px);
+  right: 15px;
   height: 35px;
   font-size: 18px;
   background-color: transparent;
   border: 1px solid transparent;
   position: absolute;
+}
+nav a:hover {
+  color: inherit !important;
 }
 header#landingPage {
   height: calc(100vh - 80px);

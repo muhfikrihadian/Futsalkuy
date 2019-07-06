@@ -12,37 +12,7 @@
     <title>SportQ | @yield('title')</title>
   </head>
   <body>
-    <nav class="d-none d-md-block" id="navDesktop">
-      <ul>
-        <li>
-          <a href="" class="brand-logo">
-            <img src="{{ asset('images/icon/futsalkuy-white.png') }}" height="80">
-          </a>
-        </li>
-        <li>
-          <form action="" class="row justify-content-center" method="get">
-            {{ csrf_field() }}
-            <div class="col-3">
-              <select class="" name="">
-                <option value="" selected disabled>Cari Berdasarkan</option>
-                <option value="">Kategori Olahraga</option>
-                <option value="">Kota</option>
-              </select>
-            </div>
-            <div class="col-6">
-              <input type="text" placeholder="Cari Lapangan. Contoh: Futsal Cawang">
-            </div>
-            <button type="submit"><i class='bx bx-search-alt'></i></button>
-          </form>
-        </li>
-        <li>
-          <a href="">sign in</a>
-        </li>
-        <li>
-          <a href="#">sign up</a>
-        </li>
-      </ul>
-    </nav>
+    @include('partials.nav')
     @yield('header')
     <main>
       @yield('content')
@@ -51,7 +21,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12 col-md-3">
-            <img src="{{ asset('images/icon/sportq.jpg') }}" height="90" alt="Our Logo">
+            <img src="{{ asset('images/icon/logo.jpg') }}" height="90" alt="Our Logo">
           </div>
           <div class="col-12 col-md-4 d-flex align-items-center">
             <ul>
