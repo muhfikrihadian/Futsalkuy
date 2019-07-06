@@ -3,39 +3,86 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ asset('css/Bootstrap-grid.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-grid.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/native.css') }}">
-    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ asset('plugin/slick/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugin/slick/slick-theme.css') }}">
+    <link href='https://unpkg.com/boxicons@2.0.2/css/boxicons.min.css' rel='stylesheet'>
+    @yield('css')
     <title>SportQ | @yield('title')</title>
   </head>
   <body>
-    <header>
-      <div class="overlay">
-        <nav>
-          <span id="nav__brand"><a href="{{ url('/') }}">FutsalKuy</a> <i class='bx bx-menu d-inline d-md-none'></i></span>
-          <a href="#keuntungan">keuntungan</a>
-          <a href="#gallery">gallery kami</a>
-          <a href="#caraBooking">cara booking</a>
-          <a href="">tentang kami</a>
-          @guest
-            <a href="{{ route('login') }}" id="nav__login">masuk</a>
-          @endguest
-          @auth
-            <a href="{{ route('login') }}" class="orange rounded" id="nav__login">dashboard</a>
-          @endauth
-        </nav>
-        @yield('heading-text')
-        @yield('button-header')
-      </div>
-    </header>
+    <nav class="d-none d-md-block" id="navDesktop">
+      <ul>
+        <li>
+          <a href="" class="brand-logo">
+            <img src="{{ asset('images/icon/futsalkuy-white.png') }}" height="80">
+          </a>
+        </li>
+        <li>
+          <form action="" class="row justify-content-center" method="get">
+            {{ csrf_field() }}
+            <div class="col-3">
+              <select class="" name="">
+                <option value="" selected disabled>Cari Berdasarkan</option>
+                <option value="">Kategori Olahraga</option>
+                <option value="">Kota</option>
+              </select>
+            </div>
+            <div class="col-6">
+              <input type="text" placeholder="Cari Lapangan. Contoh: Futsal Cawang">
+            </div>
+            <button type="submit"><i class='bx bx-search-alt'></i></button>
+          </form>
+        </li>
+        <li>
+          <a href="">sign in</a>
+        </li>
+        <li>
+          <a href="#">sign up</a>
+        </li>
+      </ul>
+    </nav>
+    @yield('header')
     <main>
       @yield('content')
     </main>
-    <footer class="orange">
-      <small>Copyright <time>{{ date('Y') }}</time> | PT Sportq</small>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-3">
+            <img src="{{ asset('images/icon/sportq.jpg') }}" height="90" alt="Our Logo">
+          </div>
+          <div class="col-12 col-md-4 d-flex align-items-center">
+            <ul>
+              <li>home</li>
+              <li>headquarters</li>
+              <li>contact us</li>
+              <li>about</li>
+              <li>blog</li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-5 d-flex flex-column justify-content-center">
+            <p>Get our newsletter</p>
+            <form action="index.html" id="form-subscribe" method="post">
+              {{ csrf_field() }}
+              <input type="email" class="flex-grow-1" placeholder="Enter your email" required>
+              <button type="submit" class="btn">Subscribe</button>
+            </form>
+            <ul>
+              <li><a href=""><i class='bx bxl-facebook-square' ></i></a></li>
+              <li><a href=""><i class='bx bxl-instagram-alt' ></i></a></li>
+              <li><a href=""><i class='bx bxl-twitter' ></i></a></li>
+              <li><a href=""><i class='bx bxl-snapchat' ></i></a></li>
+              <li><a href=""><i class='bx bxl-youtube' ></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </footer>
     <script src="{{ asset('js/jquery.js') }}" charset="utf-8"></script>
     <script src="{{ asset('js/native.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('plugin/slick/slick.min.js') }}" charset="utf-8"></script>
     @yield('script')
   </body>
 </html>

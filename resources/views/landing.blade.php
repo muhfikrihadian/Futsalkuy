@@ -1,108 +1,209 @@
 @extends('layouts.master')
-@section('title', 'Booking Lapangan Jadi Lebih Mudah')
-@section('heading-text')
-  <h1>Pemesanan Lapangan <br class="d-none d-md-block"> Jadi Lebih Mudah</h1>
-@endsection
-@section('button-header')
-  <a href="#caraBooking" class="btn rounded orange">lihat caranya <i class='bx bx-caret-down'></i></a>
+@section('header')
+  <header id="landingPage">
+    <h1>SportQ</h1>
+    <h2>Membuat hobimu menjadi lebih mudah</h2>
+  </header>
 @endsection
 @section('content')
-  <section id="keuntungan">
+  <section id="outer-mitra">
     <div class="container">
-      <h1>Keuntungan #BookingFutsal Dengan FutsalKuy</h1>
-      <div class="row">
-        <div class="col-12 col-md-4 mb-5">
+      <h1>pilihan mitra dengan beragam jenis lapangan terbaik</h1>
+      <div class="mitra row">
+        <div class="mitra__single">
           <figure>
-            <img src="{{ asset('images/icon/pelayanan.svg') }}" height="70" alt="Landing Icon">
-            <figcaption>Pelayanan Cepat</figcaption>
+            <img src="{{ asset('images/Lapangan/lapangan1.jpg') }}" height="350" alt="Lapangan Futsal">
+            <figcaption>
+              <h3>Nama Lapangan</h3>
+              <ul>
+                <li>Lokasi: <address>Jalan Swadaya</address></li>
+                <li>Kota: <address>Jakarta Selatan</address></li>
+                <li>Tarif Lapangan: <var>Rp. 100k / jam</var></li>
+                <li>Rating: <span>9/10</span></li>
+              </ul>
+            </figcaption>
           </figure>
         </div>
-        <div class="col-12 col-md-4 mb-5">
+        <div class="mitra__single">
           <figure>
-            <img src="{{ asset('images/icon/pembayaran.svg') }}" height="70" alt="Landing Icon">
-            <figcaption>Pembayaran Mudah</figcaption>
+            <img src="{{ asset('images/Lapangan/lapangan2.jpg') }}" height="350" alt="Lapangan Futsal">
+            <figcaption>
+              <h3>Nama Lapangan</h3>
+              <ul>
+                <li>Lokasi: <address>Jalan Swadaya</address></li>
+                <li>Kota: <address>Jakarta Selatan</address></li>
+                <li>Tarif Lapangan: <var>Rp. 100k / jam</var></li>
+                <li>Rating: <span>9/10</span></li>
+              </ul>
+            </figcaption>
           </figure>
         </div>
-        <div class="col-12 col-md-4 mb-5">
+        <div class="mitra__single">
           <figure>
-            <img src="{{ asset('images/icon/money.svg') }}" height="70" alt="Landing Icon">
-            <figcaption>Harga Bersahabat</figcaption>
+            <img src="{{ asset('images/Lapangan/lapangan3.jpg') }}" height="350" alt="Lapangan Futsal">
+            <figcaption>
+              <h3>Nama Lapangan</h3>
+              <ul>
+                <li>Lokasi: <address>Jalan Swadaya</address></li>
+                <li>Kota: <address>Jakarta Selatan</address></li>
+                <li>Tarif Lapangan: <var>Rp. 100k / jam</var></li>
+                <li>Rating: <span>9/10</span></li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="mitra__single">
+          <figure>
+            <img src="{{ asset('images/Lapangan/lapangan1.jpg') }}" height="350" alt="Lapangan Futsal">
+            <figcaption>
+              <h3>Nama Lapangan</h3>
+              <ul>
+                <li>Lokasi: <address>Jalan Swadaya</address></li>
+                <li>Kota: <address>Jakarta Selatan</address></li>
+                <li>Tarif Lapangan: <var>Rp. 100k / jam</var></li>
+                <li>Rating: <span>9/10</span></li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="mitra__single">
+          <figure>
+            <img src="{{ asset('images/Lapangan/lapangan3.jpg') }}" height="350" alt="Lapangan Futsal">
+            <figcaption>
+              <h3>Nama Lapangan</h3>
+              <ul>
+                <li>Lokasi: <address>Jalan Swadaya</address></li>
+                <li>Kota: <address>Jakarta Selatan</address></li>
+                <li>Tarif Lapangan: <var>Rp. 100k / jam</var></li>
+                <li>Rating: <span>9/10</span></li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="mitra__single">
+          <figure>
+            <img src="{{ asset('images/Lapangan/lapangan2.jpg') }}" height="350" alt="Lapangan Futsal">
+            <figcaption>
+              <h3>Nama Lapangan</h3>
+              <ul>
+                <li>Lokasi: <address>Jalan Swadaya</address></li>
+                <li>Kota: <address>Jakarta Selatan</address></li>
+                <li>Tarif Lapangan: <var>Rp. 100k / jam</var></li>
+                <li>Rating: <span>9/10</span></li>
+              </ul>
+            </figcaption>
           </figure>
         </div>
       </div>
     </div>
   </section>
-  <section id="gallery">
+  <section id="whyus">
     <div class="container">
-      <h1>Beberapa Gallery Kami</h1>
       <div class="row">
-        <div class="col-12 col-md-4">
-          <img src="{{ asset('images/kegiatan1.jpg') }}" height="170" alt="Photo Gallery">
-        </div>
-        <div class="col-12 col-md-4">
-          <img src="{{ asset('images/kegiatan2.jpg') }}" height="170" alt="Photo Gallery">
-        </div>
-        <div class="col-12 col-md-4">
-          <img src="{{ asset('images/kegiatan3.jpg') }}" height="170" alt="Photo Gallery">
-        </div>
-        <div class="col-12 col-md-4">
-          <img src="{{ asset('images/kegiatan4.jpg') }}" height="170" alt="Photo Gallery">
-        </div>
-        <div class="col-12 col-md-4">
-          <img src="{{ asset('images/kegiatan1.jpg') }}" height="170" alt="Photo Gallery">
-        </div>
-        <div class="col-12 col-md-4">
-          <img src="{{ asset('images/kegiatan2.jpg') }}" height="170" alt="Photo Gallery">
-        </div>
+        <figure class="col-12 col-md-4 text-center">
+          <img src="{{ asset('images/icon/connection.svg') }}" class="d-block mx-auto" height="90" alt="">
+          <figcaption class="py-3">
+            <h3>500+ Mitra</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero iusto, aliquam et magnam iure provident quia cumque soluta eos minus dolorem eius? Magni architecto corrupti, eveniet magnam sit explicabo asperiores.</p>
+          </figcaption>
+        </figure>
+        <figure class="col-12 col-md-4 text-center">
+          <img src="{{ asset('images/icon/store.svg') }}" class="d-block mx-auto" height="90" alt="">
+          <figcaption class="py-3">
+            <h3>1000+ Lapangan</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt saepe ipsam sit delectus mollitia inventore totam consequuntur. Veritatis quaerat necessitatibus quisquam nesciunt ab odit temporibus, voluptates, alias doloremque facere. Aperiam.</p>
+          </figcaption>
+        </figure>
+        <figure class="col-12 col-md-4 text-center">
+          <img src="{{ asset('images/icon/group.svg') }}" class="d-block mx-auto" height="90" alt="">
+          <figcaption class="py-3">
+            <h3>6000+ pengguna</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi alias nisi quaerat iusto autem tenetur. Dignissimos quas iure dolor odit hic, sint ipsam cumque eos consequatur expedita commodi, provident est.</p>
+          </figcaption>
+        </figure>
       </div>
-      <a href="" id="gallery__btn" class="btn orange rounded col col-md-auto">lihat lebih <i class='bx bx-chevrons-right' style='color:#ffffff'  ></i></a>
     </div>
   </section>
-  <section id="caraBooking">
+  <section id="joinus">
     <div class="container">
-      <h1>Cara #BookingFutsal Dengan FutsalKuy</h1>
-      <ol>
-        <li>1) Masuk Dengan Akun Sosial Mediamu</li>
-        <li>2) Pilih lokasi futsal yang kamu inginkan</li>
-        <li>3) Pilih jam dan hari</li>
-        <li>4) Lakukan pembayaran</li>
-        <li>5) Sudah! Kamu sudah berhasil #BookingFutsal</li>
-      </ol>
-    </div>
-  </section>
-  <section id="aboutus">
-    <div class="container">
-      <h1>Tentang Kami</h1>
-      <div class="row">
-        <div class="col-12 col-md-6 mb-5 mb-md-0 align-items-center d-flex">
-          <p>FutsalKuy adalah sebuah platform <br> Nunc euismod felis ac facilisis lobortis. <br> Praesent faucibus, quam quis molestie vestibulum</p>
+      <div class="row justify-content-between">
+        <div class="col-4 d-flex flex-column justify-content-center">
+          <h1 class="mb-3">Ayo Menjadi Mitra SportQ</h1>
+          <p>Daftarkan sekarang juga lapanganmu dan rasakan benefitnya</p>
         </div>
-        <div class="col-12 col-md-6">
-          <div class="row">
-            <figure class="col-12 col-md-4">
-              <img src="{{ asset('images/Users/people.png') }}" height="150" alt="Kami">
-              <figcaption>
-                <strong>Nama Orang</strong>
-                <small>Jabatan</small>
-              </figcaption>
-            </figure>
-            <figure class="col-12 col-md-4">
-              <img src="{{ asset('images/Users/people.png') }}" height="150" alt="Kami">
-              <figcaption>
-                <strong>Nama Orang</strong>
-                <small>Jabatan</small>
-              </figcaption>
-            </figure>
-            <figure class="col-12 col-md-4">
-              <img src="{{ asset('images/Users/people.png') }}" height="150" alt="Kami">
-              <figcaption>
-                <strong>Nama Orang</strong>
-                <small>Jabatan</small>
-              </figcaption>
-            </figure>
-          </div>
+        <div class="col-6">
+          <img src="{{ asset('images/joinus.png') }}" height="300" class="col px-0">
         </div>
       </div>
     </div>
   </section>
+  <section id="ourpeople">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <figure>
+            <img src="" alt="Jabatan">
+            <figcaption>
+              <h3>Sigit Prostio</h3>
+              <p>CMO SportQ</p>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-12 col-md-4 px-4">
+          <figure>
+            <img src="" alt="Jabatan">
+            <figcaption>
+              <h3>Muhammad Fikri Hadian</h3>
+              <p>CEO SportQ</p>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-12 col-md-4">
+          <figure>
+            <img src="" alt="Jabatan">
+            <figcaption>
+              <h3>Thereo Sebastian</h3>
+              <p>CTO SportQ</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+@endsection
+@section('script')
+  <script>
+    $(document).ready(function() {
+      $(".mitra").slick({
+        infinite: false,
+        speed: 300,
+        slidesToShow: 3,
+        prevArrow: '<button class="slick-prev slick-arrow" aria-label="Previous" type="button"><i class="bx bx-chevron-left"></i></button>',
+        nextArrow: '<button class="slick-next slick-arrow" aria-label="Next" type="button"><i class="bx bx-chevron-right"></i></button>',
+        slidesToScroll: 3,
+        responsive: [
+          {
+            breakpoint: 993,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+              infinite: true,
+              dots: false
+            }
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              dots: true
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]
+      });
+    });
+  </script>
 @endsection
