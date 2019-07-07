@@ -38,6 +38,10 @@ class CustomerController extends Controller
         return view('Customer.Futsal.lapangan', $data);
     }
     public function bookingData(Request $r){
+        // $p = Reservation::join('jam_operasis');
+        $p = JamOperasi::join('reservation', )->get();
+        dd($r->all());
+
         $data['valid'] = Reservation::where('id_lapangan', $r->id_lapangan)->where('tanggal', $r->tanggal)->get();
         $data['jam'] = JamOperasi::where('id_lapangan', $r->id_lapangan)->get();
         return view('Customer.Futsal.booking', $data);

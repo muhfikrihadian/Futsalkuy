@@ -30,76 +30,23 @@
       </aside>
       <main class="col px-0 px-md-3">
         <div class="row" id="outer-lapangan">
-          {{-- @if(isset($vendor))
-          @foreach($vendor as $mitra) --}}
+          @if(isset($vendor))
+          @foreach($vendor as $mitra)
           <div class="col-12 col-md-6">
+          <a href="{{ url('customer/mitra/'.$mitra->nama) }}">
             <figure>
               <img src="{{ asset('images/Lapangan/lapangan1.jpg') }}" height="200" alt="Gambar Lapangan">
               <figcaption class="d-flex flex-column py-3">
-                <h2 class="text-secondary">Benhill Futsal</h2>
-                <address>Jln. Blablabla No.98, Jakarta Timur</address>
-                <var>Rp. 80.000 / Jam</var>
+                <h2 class="text-secondary">{{ $mitra->nama }}</h2>
+                <address>{{ $mitra->alamat }}</address>
+                <var></var>
                 <time>07:00 - 23:00</time>
               </figcaption>
             </figure>
+            </a>
           </div>
-          <div class="col-12 col-md-6">
-            <figure>
-              <img src="{{ asset('images/Lapangan/lapangan1.jpg') }}" height="200" alt="Gambar Lapangan">
-              <figcaption class="d-flex flex-column py-3">
-                <h2 class="text-secondary">Benhill Futsal</h2>
-                <address>Jln. Blablabla No.98, Jakarta Timur</address>
-                <var>Rp. 80.000 / Jam</var>
-                <time>07:00 - 23:00</time>
-              </figcaption>
-            </figure>
-          </div>
-          <div class="col-12 col-md-6">
-            <figure>
-              <img src="{{ asset('images/Lapangan/lapangan1.jpg') }}" height="200" alt="Gambar Lapangan">
-              <figcaption class="d-flex flex-column py-3">
-                <h2 class="text-secondary">Benhill Futsal</h2>
-                <address>Jln. Blablabla No.98, Jakarta Timur</address>
-                <var>Rp. 80.000 / Jam</var>
-                <time>07:00 - 23:00</time>
-              </figcaption>
-            </figure>
-          </div>
-          <div class="col-12 col-md-6">
-            <figure>
-              <img src="{{ asset('images/Lapangan/lapangan1.jpg') }}" height="200" alt="Gambar Lapangan">
-              <figcaption class="d-flex flex-column py-3">
-                <h2 class="text-secondary">Benhill Futsal</h2>
-                <address>Jln. Blablabla No.98, Jakarta Timur</address>
-                <var>Rp. 80.000 / Jam</var>
-                <time>07:00 - 23:00</time>
-              </figcaption>
-            </figure>
-          </div>
-          <div class="col-12 col-md-6">
-            <figure>
-              <img src="{{ asset('images/Lapangan/lapangan1.jpg') }}" height="200" alt="Gambar Lapangan">
-              <figcaption class="d-flex flex-column py-3">
-                <h2 class="text-secondary">Benhill Futsal</h2>
-                <address>Jln. Blablabla No.98, Jakarta Timur</address>
-                <var>Rp. 80.000 / Jam</var>
-                <time>07:00 - 23:00</time>
-              </figcaption>
-            </figure>
-          </div>
-          <div class="col-12 col-md-6">
-            <figure>
-              <img src="{{ asset('images/Lapangan/lapangan1.jpg') }}" height="200" alt="Gambar Lapangan">
-              <figcaption class="d-flex flex-column py-3">
-                <h2 class="text-secondary">Benhill Futsal</h2>
-                <address>Jln. Blablabla No.98, Jakarta Timur</address>
-                <var>Rp. 80.000 / Jam</var>
-                <time>07:00 - 23:00</time>
-              </figcaption>
-            </figure>
-          </div>
-        {{-- @endforeach
-        @endif --}}
+          @endforeach
+          @endif
         </div>
         <div class="row py-3">
           {{-- {{ $vendor->links() }} --}}
