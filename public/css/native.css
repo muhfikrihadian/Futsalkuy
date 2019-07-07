@@ -7,6 +7,10 @@
   outline: none;
   scroll-behavior: smooth;
 }
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
 a {
   color: inherit;
 }
@@ -19,7 +23,7 @@ input {
   padding: 0 10px;
   border-radius: 5px;
 }
-#navDesktop .dropdown-menu {
+nav .dropdown-menu {
   transform: translateX(-50%);
   left: 50%;
 }
@@ -42,37 +46,34 @@ input {
   background: none;
   color: #000 !important;
 }
-#navDesktop {
+nav {
   padding: 0 5%;
-  height: 80px;
   background-color: #56a2d9;
 }
-#navDesktop ul {
+nav ul {
+  flex-direction: column;
   height: 100%;
   display: flex;
 }
-#navDesktop ul li {
+nav ul li {
   display: flex;
   color: #fff;
   padding-right: 15px;
   align-items: center;
 }
-#navDesktop ul li:hover {
+nav ul li:hover {
   color: #d5d5d5;
 }
-#navDesktop ul li:first-child {
-  margin-right: auto;
-}
-#navDesktop ul li:not(:first-child) {
+nav ul li:not(:first-child) {
   padding-left: 15px;
 }
-#navDesktop ul li:nth-child(2) {
+nav ul li:nth-child(2) {
   flex-grow: 1;
 }
-#navDesktop ul li:nth-last-child(2) {
+nav ul li:nth-last-child(2) {
   margin-left: auto;
 }
-#navDesktop ul li:nth-child(2) form select {
+nav ul li:nth-child(2) form select {
   background-color: transparent;
   height: 100%;
   padding: 0 10px;
@@ -86,35 +87,29 @@ input {
   -moz-appearance: none;
   border: 1px solid transparent;
 }
-#navDesktop ul li:nth-child(2) form option {
+nav ul li:nth-child(2) form option {
   color: #000;
 }
-#navDesktop ul a {
+nav ul a {
   display: block;
   text-transform: capitalize;
 }
-#navDesktop ul li form {
+nav ul li form {
   width: 100%;
   position: relative;
 }
-#navDesktop ul li form input {
+nav li form button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+nav ul li form input {
   width: 100%;
   height: 35px;
   padding-left: 15px;
+  padding-right: 40px;
   border-radius: 7px;
   border: 1px solid #d5d5d5;
-}
-#navDesktop ul li form button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 15px;
-  right: 15px;
-  height: 35px;
-  font-size: 18px;
-  background-color: transparent;
-  border: 1px solid transparent;
-  position: absolute;
 }
 nav a:hover {
   color: inherit !important;
@@ -252,5 +247,26 @@ section .container > h1:first-child {
 @media screen and (min-width: 768px) {
   #landingPage + main #outer-mitra .container .mitra .mitra__single {
     padding: 0 10px;
+  }
+  nav {
+    height: 80px;
+  }
+  nav ul {
+    flex-direction: row;
+  }
+  nav ul li:first-child {
+    margin-right: auto;
+  }
+  nav ul li form button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    right: 15px;
+    height: 35px;
+    font-size: 18px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    position: absolute;
   }
 }
