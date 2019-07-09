@@ -35,8 +35,8 @@
         </div>
         <div class="col-12 col-md-9">
           <select name="jam" id="select" class="form-control" required>
-          @foreach($jam as $free)
-            <option value="{{ $free->jam }}">{{ $free->jam }}</option>
+          @foreach($data as $key)
+            <option value="{{ $key->jam_operasi }}">{{ $key->jam_operasi }}</option>
             @endforeach
           </select>
         </div>

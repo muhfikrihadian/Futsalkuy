@@ -16,7 +16,7 @@ class CreateJamOperasisTable extends Migration
         Schema::create('jam_operasis', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_lapangan');
-            $table->string('jam');
+            $table->string('jam_operasi');
             $table->enum('status', ['Tersedia','Tidak Tersedia']);
             $table->timestamps();
         });

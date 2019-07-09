@@ -38,13 +38,16 @@ class CustomerController extends Controller
         return view('Customer.Futsal.lapangan', $data);
     }
     public function bookingData(Request $r){
-        // $p = Reservation::join('jam_operasis');
-        $p = JamOperasi::join('reservation', )->get();
-        dd($r->all());
+        $data = JamOperasi::join('reservations', 'reservations.jam', '!=', 'jam_operasis.jam_operasi')       
+                ->where('reservations.status', '!=', 'Terbooking')
+                ->select('jam_operasis.jam_operasi')
+                ->get();
+                
+        return view('Customer.Futsal.booking', compact('data'));                
 
-        $data['valid'] = Reservation::where('id_lapangan', $r->id_lapangan)->where('tanggal', $r->tanggal)->get();
-        $data['jam'] = JamOperasi::where('id_lapangan', $r->id_lapangan)->get();
-        return view('Customer.Futsal.booking', $data);
+        // $data['valid'] = Reservation::where('id_lapangan', $r->id_lapangan)->where('tanggal', $r->tanggal)->get();
+        // $data['jam'] = JamOperasi::where('id_lapangan', $r->id_lapangan)->get();
+        // return view('Customer.Futsal.booking', $data);
     }
     public function bookingPage(){
         return view('Customer.Futsal.booking');
