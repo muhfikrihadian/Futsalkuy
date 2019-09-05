@@ -72,10 +72,12 @@ class CustomerController extends Controller
     }
     public function mitra($nama){
         $nama = Crypt::decryptString($nama);
-        $vendorid = Profile_Mitra::where('id', $nama)->first();
-        $id = $vendorid->id;
-        $data['field'] = Lapangan::where('id_mitra', $id)->get();
+        $vendorid = Profile_Mitra::where('id', $nama)->get();
+        foreach ($vendorid as $vid)
+        $idm = $vid->id;
+        $data['field'] = Lapangan::where('id_mitra', $idm)->get();
         $data['vendor'] = $vendorid;
         return view('Customer.Futsal.mitra', $data);
     }
+
 }

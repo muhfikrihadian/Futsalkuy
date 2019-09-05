@@ -33,14 +33,14 @@
           @if(isset($vendor))
           @foreach($vendor as $mitra)
           <div class="col-12 col-md-6">
-          <a href="{{ url('customer/mitra/'.$mitra->nama) }}">
+          <a href="{{ url('customer/futsal/mitra/'.encrypt($mitra->id)) }}">
             <figure>
-              <img src="{{ asset('images/Lapangan/lapangan1.jpg') }}" height="200" alt="Gambar Lapangan">
+              <img src="{{ asset('images/Users/Mitra/'.$mitra->foto) }}" height="200" alt="Gambar Lapangan">
               <figcaption class="d-flex flex-column py-3">
                 <h2 class="text-secondary">{{ $mitra->nama }}</h2>
                 <address>{{ $mitra->alamat }}</address>
                 <var></var>
-                <time>07:00 - 23:00</time>
+                <time>2 Lapangan</time>
               </figcaption>
             </figure>
             </a>

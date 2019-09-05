@@ -37,7 +37,10 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Profile</a>
           <a class="dropdown-item" href="#">Settings</a>
-          <a class="dropdown-item" href="#">Sign Out</a>
+          <a class="dropdown-item" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Sign Out
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+          {{ csrf_field() }}
+          </form></a>
         </div>
       </li>
     @endauth

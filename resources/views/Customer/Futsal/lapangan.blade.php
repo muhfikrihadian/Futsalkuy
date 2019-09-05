@@ -11,7 +11,7 @@
         @endforeach
       </p>
       <hr>
-      <p>Dipublikasikan Pada {{ $field[0]->created_at->format('m/d/Y') }}</p>
+      <p>Dipublikasikan Pada {{ $field[0]->created_at->format('d F Y') }}</p>
       <hr>
       <img class="img-fluid rounded wow bounce" src="https://lapanganfutsal.id/wp-content/uploads/2017/08/qs-lapangan-futsal-medan-a.png" alt="">
 
